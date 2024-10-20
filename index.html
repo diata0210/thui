@@ -248,12 +248,14 @@
     <canvas id="heart"></canvas>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script>
-      window.addEventListener('load', function() {
-    const audio = document.getElementById('myAudio');
-    audio.play().catch(error => {
-      console.log('Tự động phát bị chặn bởi trình duyệt:', error);
-    });
-  });
+      function playAudio() {
+        const audio = document.getElementById('myAudio');
+        audio.play().catch(error => {
+          console.log('Tự động phát bị chặn bởi trình duyệt:', error);
+        });
+    }
+
+      document.addEventListener('click', playAudio, { once: true });
       // Khi bấm vào hộp quà, thẻ sẽ xuất hiện
       document.getElementById("giftBox").addEventListener("click", function () {
         document.getElementById("giftBox").style.display = "none";
